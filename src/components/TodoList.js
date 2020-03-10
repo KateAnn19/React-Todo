@@ -16,7 +16,7 @@ const TodoList = props => {
           //toggleCompleted is passed down from App.js as a prop
         />
       ))}
-      <button className="clear-btn" onClick={props.clearCompleted}>
+      <button className="clear-btn" onClick={props.removeTask}>
         Clear Done
       </button>
     </div>

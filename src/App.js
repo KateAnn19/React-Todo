@@ -53,13 +53,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       tasks: tasks,
-      name: ''
+      // name: ''
     }
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
-
 
   toggleCompleted = clickedTaskId => {
     this.setState({
@@ -72,8 +71,10 @@ class App extends React.Component {
       //arrays -> ...(spread operator), oR immutable array methods
       tasks: this.state.tasks.map(task => {
         if (task.id === clickedTaskId) {
-          console.log(task.id)
+          // console.log(task.id)
+          // console.log(task)
           return {
+            
             ...task,
             // ...item is doing this ----------------------------
             // {
@@ -83,17 +84,29 @@ class App extends React.Component {
             // },
             //---------------------------------------
             completed: !task.completed
+           
             //--------------------------------
             //we are adding a new purchased field which means the
             //object has two purchased property fields
             //the second purchased property field will overwrite the first
           };
-        } else {
+        } 
+        else {
           return task;
         }
       })
     }); //always pass in an object {}
   };
+
+  removeTask = taskName => {
+    this.setState({
+      tasks: this.state.tasks.filter((task) => {
+        return(
+          task.completed === false 
+        )
+      })
+    })
+  }
 
   addTask = taskName => {
     //add a new item to the groceries state
@@ -118,6 +131,7 @@ class App extends React.Component {
         <TodoList
           tasks={this.state.tasks}
           toggleCompleted={this.toggleCompleted}
+          removeTask = {this.removeTask}
           //passing togglePurchased as a prop
         />
       </div>
