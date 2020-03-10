@@ -1,22 +1,22 @@
 import React from 'react';
-import Todo from './components/Todo';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import "./components/Todo.css";
 
 const tasks = [
     {
-      task: 'Organize Garage',
-      id: Date.now(),
+      name: 'Organize Garage',
+      id: 1234343,
       completed: false
     },
     {
-      task: 'Bake Cookies',
-      id: Date.now(),
+      name: 'Bake Cookies',
+      id: 123123123,
       completed: false
     },
     {
       name: "Eat Bananas",
-      id: Date.now(),
+      id: 124234235245,
       completed: false
     },
     {
@@ -53,7 +53,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       tasks: tasks,
-      id: ''
+      name: ''
     }
   }
   // you will need a place to store your state in this component.
@@ -72,6 +72,7 @@ class App extends React.Component {
       //arrays -> ...(spread operator), oR immutable array methods
       tasks: this.state.tasks.map(task => {
         if (task.id === clickedTaskId) {
+          console.log(task.id)
           return {
             ...task,
             // ...item is doing this ----------------------------

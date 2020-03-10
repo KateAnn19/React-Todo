@@ -13,7 +13,7 @@ const TodoList = props => {
           key={task.id}
           task={task}
           toggleCompleted={props.toggleCompleted}
-          //togglePurchased is passed down from App.js as a prop
+          //toggleCompleted is passed down from App.js as a prop
         />
       ))}
       <button className="clear-btn" onClick={props.clearCompleted}>
