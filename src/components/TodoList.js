@@ -5,22 +5,25 @@ import React from "react";
 import Todo from "./Todo";
 
 const TodoList = props => {
-  // const sortedList = props.groceries.sort((a, b) => a.purchased - b.purchased);
+  
   return (
     <div className="todo-list">
       {props.tasks.map(task => (
+        
         <Todo
           key={task.id}
+          name={task.name}
           task={task}
-          toggleCompleted={props.toggleCompleted}
-          //toggleCompleted is passed down from App.js as a prop
+          id={task.id}
+          toggleCompleted={props.toggleCompleted} 
+          editing={props.editing}
         />
       ))}
-      <button className="clear-btn" onClick={props.clearCompleted}>
-        Clear Done
+      <button className="clear-btn" onClick={props.removeTask}>
+        Clear Done 💠 
       </button>
     </div>
   );
 };
 
-export default TodoList;
+export default TodoList; 

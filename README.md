@@ -65,3 +65,24 @@ We're going to practice building a stateful class component with this project. E
 - **Search Functionality** Add a input bar that allows you to search through your tasks and only show the ones that match the search input.
 
 - **Hosting** Create a [Netlify Account](https://www.netlify.com/) and follow the tutorial on how to host your shiny new todo app on the world wide web.
+
+
+
+//FORMS FORMS FORMS !!! FROM COLT STEElE'S COURSE
+
+//Thinking About State
+
+-It's convenient to have a JS function that handles the submission of the form and has access to the data the user entered. This technique is called controlled components
+
+-In HTML, form elements such as <input>, <textarea> and <select> typically maintain their own state and update it based on user input
+
+-In React, mutable state is kept in the state of components, and only updated with setState(). We let React know right away when state changes
+
+-We make React state be the 'single source of truth'
+-React controls: What is shown(the value of the component) and what happens when the user types (this is kept in state)
+
+--value attribute on form is set to this.state.fullName 
+--handleChange runs on every keystroke to update the React state, the displayed value will update as the user types
+
+Form 
+With a controlled component, every state mutation will have ann associated handler function. This makes it easy to modify or validate user input
